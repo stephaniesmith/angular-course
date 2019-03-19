@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { COURSES } from '../db-data';
 import { Course } from './model/course';
+import { CourseCardComponent } from './course-card/course-card.component';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,8 @@ import { Course } from './model/course';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  @ViewChild(CourseCardComponent) card: CourseCardComponent;
 
   courses = COURSES;
 
@@ -23,6 +26,7 @@ export class AppComponent {
 
   onCourseSelected(course: Course) {
     console.log('Selected!!', course);
+    console.log('Card!!', this.card);
   }
 
 }
