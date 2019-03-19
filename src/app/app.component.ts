@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { COURSES } from '../db-data';
 import { Course } from './model/course';
 import { CourseCardComponent } from './course-card/course-card.component';
@@ -10,7 +10,10 @@ import { CourseCardComponent } from './course-card/course-card.component';
 })
 export class AppComponent {
 
-  @ViewChild(CourseCardComponent) card: CourseCardComponent;
+  @ViewChild('cardRef1') card1: CourseCardComponent;
+  @ViewChild('cardRef2', { read: ElementRef }) card2: CourseCardComponent;
+
+  @ViewChild('container') container: ElementRef;
 
   courses = COURSES;
 
@@ -25,8 +28,10 @@ export class AppComponent {
   course = COURSES[0];
 
   onCourseSelected(course: Course) {
-    console.log('Selected!!', course);
-    console.log('Card!!', this.card);
+    // console.log('Selected!!', course);
+    console.log('Card!!', this.card1);
+    console.log('Card!!', this.card2);
+    // console.log('Container!!', this.container);
   }
 
 }
