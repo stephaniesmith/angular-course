@@ -28,12 +28,12 @@
     <course-card
         (courseSelected)="onCourseSelected($event)"
         [course]="courses[0]">
-        <img
-            width="300"
-            alt="Angular Logo"
-            [src]="courses[0].iconUrl">
+        
+        <course-image [src]="courses[0].iconUrl"></course-image>
 
-        <h1>HI!</h1>
+        <div class="course-description">
+            {{courses[0].longDescription}}
+        </div>
     </course-card>
 
 
