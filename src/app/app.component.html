@@ -26,13 +26,16 @@
 <div class="courses" #container>
 
     <course-card
+        *ngIf="courses[0] as course"
         (courseSelected)="onCourseSelected($event)"
-        [course]="courses[0]">
+        [course]="course">
         
-        <course-image [src]="courses[0].iconUrl"></course-image>
+        <course-image [src]="course.iconUrl"></course-image>
+        <course-image [src]="courses[1].iconUrl"></course-image>
+        <course-image [src]="courses[2].iconUrl"></course-image>
 
         <div class="course-description">
-            {{courses[0].longDescription}}
+            {{course.longDescription}}
         </div>
     </course-card>
 
