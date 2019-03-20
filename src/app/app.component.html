@@ -25,6 +25,16 @@
 
 <div class="courses" #container>
 
+    <course-card
+        (courseSelected)="onCourseSelected($event)"
+        [course]="courses[0]">
+        <img
+            width="300"
+            alt="Angular Logo"
+            [src]="courses[0].iconUrl">
+    </course-card>
+
+
     <!-- <course-card #cardRef1
         (courseSelected)="onCourseSelected($event)"
         [course]="courses[0]">
@@ -34,12 +44,12 @@
         [course]="courses[1]">
     </course-card> -->
 
-    <course-card
+    <!-- <course-card
         *ngFor="let course of courses; index as i"
         (courseSelected)="onCourseSelected($event)"
         [course]="course"
         [cardIndex]="i + 1">
-    </course-card>
+    </course-card> -->
     <!-- <course-card
         *ngFor="let course of courses | slice:0:3; index as i"
         (courseSelected)="onCourseSelected($event)"
