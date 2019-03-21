@@ -5,6 +5,8 @@ import { Directive } from '@angular/core';
 })
 export class HighlightedDirective {
 
-  constructor() { }
+  constructor() {
+    console.log('Here!');
+  }
 
 }
