@@ -14,7 +14,6 @@ import {
 } from '@angular/core';
 import {Course} from '../model/course';
 import {CourseImageComponent} from '../course-image/course-image.component';
-import { COURSES_SERVICE } from '../app.component';
 import { CoursesService } from '../services/courses.service';
 
 @Component({
